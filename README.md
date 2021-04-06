@@ -1,4 +1,4 @@
-# Fitness-Tracker
+# Workout-Tracker
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -21,7 +21,7 @@
 
 MIT License
 
-    Copyright (c) [2021] [JasDJames, erumd, mrllanes, Q-Jones92]
+    Copyright (c) [2021] [erumd]
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
