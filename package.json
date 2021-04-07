@@ -9,7 +9,7 @@
     "watch": "nodemon server.js",
     "seed": "node seeders/seed.js"
   },
-  "author": "",
+  "author": "Erum Dhukka",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3",
