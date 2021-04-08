@@ -4,6 +4,8 @@
 
 ## Description
 
+This application lets the user view, create, and track daily workouts. They can log log multiple exercises in a workout on a given day. They can track the name, type, weight, sets, reps, and duration of the exercise. There is a stats page that shows the overall stats of their workouts.
+
 ## Table of Contents (Optional)
 
 - [Deployment](#deployment)
@@ -15,7 +17,14 @@
 
 ## Deployment
 
+https://github.com/erumd/Workout-Tracker
+
 ## Installation
+
+1. After cloning repo to your device locate the folder
+2. In terminal run "npm install"
+3. In terminal "run npm seed"
+4. In terminal command line run "npm start"
 
 ## License
 
