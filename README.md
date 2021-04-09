@@ -4,24 +4,28 @@
 
 ## Description
 
-This application lets the user view, create, and track daily workouts. They can log log multiple exercises in a workout on a given day. They can track the name, type, weight, sets, reps, and duration of the exercise. There is a stats page that shows the overall stats of their workouts.
+This application lets the user view, create, and track daily workouts. They can log multiple exercises in a workout on a given day. They can track the name, type, weight, sets, reps, and duration of the exercise. There is a stats page that shows the overall stats of their workouts.
+
+Technologies used to make this applications are Visual Studio Code, Github, Node.js, MongoDB, Mongoose, Heroku
 
 ## Table of Contents (Optional)
 
 - [Deployment](#deployment)
 - [Installation](#installation)
-- [User Story](#userStory)
-- [Credits](#credits)
-- [Resources](#resources)
+- [Features](#features)
+- [Contributing](#contributing)
+- [Questions](#questions)
 - [License](#license)
 
 ## Deployment
 
 https://github.com/erumd/Workout-Tracker
+
 https://erum-workout-tracker.herokuapp.com/
 
 ![Screenshot](./images/addexercise.png)
 ![Screenshot](./images/dashboard.png)
+![Screenshot](./images/lastworkout.png)
 
 ## Installation
 
@@ -29,6 +33,16 @@ https://erum-workout-tracker.herokuapp.com/
 2. In terminal run "npm install"
 3. In terminal "run npm seed"
 4. In terminal command line run "npm start"
+
+## Features
+
+User can add Exercises.
+User can go back and continue previous exercise.
+Stats page that shows total minutes of work and weights lifted for 7 days.
+
+## Contributing
+
+If you would like to make this Workout App better then please fork this repo. Make changes and push changes for me to approve.
 
 ## Questions
 
