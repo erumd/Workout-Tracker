@@ -1,45 +1,21 @@
 const router = require('express').Router();
-const Workout = require('../models/workout.js');
+const workout = require('../models/workout.js');
 const path = require('path');
 
-// CLASS ACTIVITY
-// router.get("/api/workout", (req, res) => {
-//     Transaction.find({})
-//       .sort({ date: -1 })
-//       .then(dbTransaction => {
-//         res.json(dbTransaction);
-//       })
-//       .catch(err => {
-//         res.status(400).json(err);
-//       });
-//   });
-
-// activitu 11
-// app.post("/submit", ({ body }, res) => {
-//     User.create(body)
-//       .then(dbUser => {
-//         res.json(dbUser);
-//       })
-//       .catch(err => {
-//         res.json(err);
-//       });
-//   });
-
-// ACTIVITY 14
-// app.get("/books", (req, res) => {
-//     db.Book.find({})
-//       .then(dbBook => {
-//         res.json(dbBook);
-//       })
-//       .catch(err => {
-//         res.json(err);
-//       });
-//   });
-
-CURD;
+// CURD;
 //get
-app.get('/workout', (req, res) => {
-  Workout.find({})
+// added aggregate to show the duration
+router.get('/api/workouts', (req, res) => {
+  workout
+    .aggregate([
+      {
+        $addFields: {
+          totalDuration: {
+            $sum: '$exercises.duration',
+          },
+        },
+      },
+    ])
     .then((user) => {
       res.json(user);
     })
@@ -48,11 +24,54 @@ app.get('/workout', (req, res) => {
     });
 });
 
-//UPDATE > put
+// need another get. NOT SURE. READ up online
+router.get('/api/workouts/range', (req, res) => {
+  workout
+    .aggregate([
+      {
+        $addFields: {
+          totalDuration: {
+            $sum: '$exercises.duration',
+          },
+        },
+      },
+    ])
+    .sort({ day: -1 })
+    .limit(7)
+    .then((user) => {
+      res.json(user);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+});
 
-//CREATE > post
-router.post('/workouts', ({ body }, res) => {
-  Workout.create({ body })
+//UPDATE > put. Double check
+// tutor helped. id each workout
+// https://stackoverflow.com/questions/33049707/push-items-into-mongo-array-via-mongoose
+router.put('/api/workouts/:id', (req, res) => {
+  workout
+    .update({ _id: req.params.id }, { $push: { exercises: req.body } })
+    .then((user) => {
+      res.json(user);
+    })
+    .catch((err) => {
+      res.json(err);
+    });
+});
+
+// PersonModel.update(
+//   { _id: person._id },
+//   { $push: { friends: friend } },
+//   done
+// );
+
+//CREATE > post ✅
+// need /api for front end
+// need workouts with s
+router.post('/api/workouts', ({ body }, res) => {
+  workout
+    .create({ body })
     .then((user) => {
       res.json(user);
     })
@@ -62,7 +81,6 @@ router.post('/workouts', ({ body }, res) => {
 });
 
 // send files to html page
-
 router.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'));
 });
