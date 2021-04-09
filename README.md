@@ -18,6 +18,10 @@ This application lets the user view, create, and track daily workouts. They can 
 ## Deployment
 
 https://github.com/erumd/Workout-Tracker
+https://erum-workout-tracker.herokuapp.com/
+
+![Screenshot](./images/addexercise.png)
+![Screenshot](./images/dashboard.png)
 
 ## Installation
 
@@ -25,6 +29,12 @@ https://github.com/erumd/Workout-Tracker
 2. In terminal run "npm install"
 3. In terminal "run npm seed"
 4. In terminal command line run "npm start"
+
+## Questions
+
+If you have any questions or would like to contribute you can view my GitHub account:
+(https://github.com/erumd)
+or email me erumdhukka531@gmail.com.
 
 ## License
 
